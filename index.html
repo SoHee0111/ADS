@@ -34,10 +34,10 @@
     console.log(document.getElementById('time').innerText = ' ' + year + '년' + month + '월' + day + '일' + + hours + '시에 측정하였습니다' + '.');
 </script>
 <script>
-    fetch('https://api.hangang.msub.kr/')
+   fetch('http://openapi.seoul.go.kr:8088/(인증키)/json/WPOSInformationTime/1/5/')
         .then(res => res.json())
         .then(myJson => {
-            console.log(document.getElementById('hangang_temp').innerText = '한강' + '       ' + myJson.temp + " °C")
+            console.log(document.getElementById('hangang_temp').innerText = '한강' + '       ' + myJson.WPOSInformationTime.row[4].W_TEMP + " °C")
         });
 </script>
 
